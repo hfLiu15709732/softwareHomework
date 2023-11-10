@@ -4,7 +4,7 @@ import { IRouter } from '../index';
 
 const result: IRouter[] = [
   {
-    path: '/detail',
+    path: '/order',
     meta: {
       title: '订单信息管理',
       Icon: CalendarEditIcon,
@@ -19,12 +19,12 @@ const result: IRouter[] = [
         },
       },
       {
-        path: 'select1',
+        path: 'search/passenger',
         Component: lazy(() => import('pages/OrderInfo/OrderPassenger')),
         meta: { title: '订单管理乘客' },
       },
       {
-        path: 'select2',
+        path: 'search/admin',
         Component: lazy(() => import('pages/OrderInfo/OrderAdmin')),
         meta: { title: '订单信息查询管理员' },
       },

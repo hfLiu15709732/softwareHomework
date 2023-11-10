@@ -26,7 +26,8 @@ instance.interceptors.response.use(
         return Promise.resolve(data);
       }
       return Promise.resolve(data);
-    } else if (response.status in TOKEN_ERROR_CODE) {
+    }
+    if (response.status in TOKEN_ERROR_CODE) {
       MessagePlugin.error('Token信息过期,请重新登录');
       removeToken();
       // navigate('/login/index');

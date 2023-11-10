@@ -12,6 +12,7 @@ import {
   Avatar,
   Upload,
   MessagePlugin,
+  InputNumber,
 } from 'tdesign-react';
 import classnames from 'classnames';
 import { SubmitContext, FormInstanceFunctions } from 'tdesign-react/es/form/type';
@@ -127,6 +128,36 @@ export default memo(() => {
                 rules={[{ required: true }]}
               >
                 <DatePicker mode='date' enableTimePicker />
+              </FormItem>
+            </Col>
+            <Col span={4}>
+              <FormItem name='effectiveDate3' initialData={INITIAL_DATA.effectiveDate} rules={[{ required: true }]}>
+                <InputNumber theme='normal' align='right' label='头等舱价格：' suffix='元' style={{ width: '200px' }} />
+              </FormItem>
+            </Col>
+            <Col span={4}>
+              <FormItem name='effectiveDate4' initialData={INITIAL_DATA.effectiveDate} rules={[{ required: true }]}>
+                <InputNumber theme='normal' align='right' label='商务舱价格：' suffix='元' style={{ width: '200px' }} />
+              </FormItem>
+            </Col>
+            <Col span={4}>
+              <FormItem name='effectiveDate5' initialData={INITIAL_DATA.effectiveDate} rules={[{ required: true }]}>
+                <InputNumber theme='normal' align='right' label='经济舱价格：' suffix='元' style={{ width: '200px' }} />
+              </FormItem>
+            </Col>
+            <Col span={4}>
+              <FormItem name='effectiveDate3' initialData={INITIAL_DATA.effectiveDate} rules={[{ required: true }]}>
+                <InputNumber theme='normal' align='right' label='头等舱数量：' suffix='个' style={{ width: '200px' }} />
+              </FormItem>
+            </Col>
+            <Col span={4}>
+              <FormItem name='effectiveDate4' initialData={INITIAL_DATA.effectiveDate} rules={[{ required: true }]}>
+                <InputNumber theme='normal' align='right' label='商务舱数量：' suffix='个' style={{ width: '200px' }} />
+              </FormItem>
+            </Col>
+            <Col span={4}>
+              <FormItem name='effectiveDate5' initialData={INITIAL_DATA.effectiveDate} rules={[{ required: true }]}>
+                <InputNumber theme='normal' align='right' label='经济舱数量：' suffix='个' style={{ width: '200px' }} />
               </FormItem>
             </Col>
 

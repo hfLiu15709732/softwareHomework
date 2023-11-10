@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { manifest, MapCollectionIcon } from 'tdesign-icons-react';
 import { IRouter } from '../index';
+
 console.log(manifest);
 
 const result: IRouter[] = [
