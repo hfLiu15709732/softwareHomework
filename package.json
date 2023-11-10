@@ -60,7 +60,7 @@
     "smooth-scrollbar": "^8.8.4",
     "tdesign-icons-react": "^0.3.2",
     "tdesign-react": "^1.1.10",
-    "tvision-color": "^1.5.0"
+    "tvision-color": "^1.6.0"
   },
   "browserslist": {
     "production": [
