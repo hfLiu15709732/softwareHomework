@@ -21,17 +21,17 @@ const User: React.FC<BrowserRouterProps> = () => {
     placeholderColor: ['legend.textStyle.color', 'xAxis.axisLabel.color', 'yAxis.axisLabel.color'],
   });
 
-  // const handleGetData = async () => {
-  //   try {
-  //     const airList = await getContractList2();
-  //     console.log(airList);
-  //   } catch (error) {
-  //     console.log(error, '出错啦');
-  //   }
-  // };
+  const handleGetData = async () => {
+    try {
+      const airList = await getContractList2();
+      console.log(airList);
+    } catch (error) {
+      console.log(error, '出错啦');
+    }
+  };
 
   useEffect(() => {
-    // handleGetData();
+    handleGetData();
   }, []);
   return (
     <div style={{ overflow: 'hidden !important' }}>

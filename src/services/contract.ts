@@ -1,4 +1,4 @@
-import request from 'utils/request';
+import request, { GET } from 'utils/request';
 
 export interface IContract {
   adminName: string;
@@ -35,6 +35,8 @@ export const getContractList = async (params: IParams) => {
 };
 
 export const getContractList2 = async () => {
-  const result = await request.get('/airline');
+  const result = await GET('/airline/admin');
+  console.log(result);
+
   return result;
 };
