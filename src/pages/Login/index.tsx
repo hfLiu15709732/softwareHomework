@@ -15,6 +15,12 @@ export default memo(() => {
   const handleSwitchLoginType = () => {
     setType(type === 'register' ? 'login' : 'register');
   };
+  const handleSwitchToLogin = () => {
+    setType('login');
+  };
+  const handleSwitchToRegister = () => {
+    setType('register');
+  };
 
   return (
     <div
@@ -24,17 +30,21 @@ export default memo(() => {
       <div className={Style.loginContainer}>
         <div className={Style.titleContainer}>
           <h1 className={Style.title}>登录到</h1>
-          <h1 className={Style.title}>TDesign Starter</h1>
+          <h1 className={Style.title}>易起航 票务管理</h1>
           <div className={Style.subTitle}>
-            <p className={classNames(Style.tip, Style.registerTip)}>
+            {/* <p className={classNames(Style.tip, Style.registerTip)}>
               {type === 'register' ? '已有账号?' : '没有账号吗?'}
-            </p>
-            <p className={classNames(Style.tip, Style.loginTip)} onClick={handleSwitchLoginType}>
-              {type === 'register' ? '登录' : '注册新账号'}
-            </p>
+            </p> */}
           </div>
         </div>
         {type === 'login' ? <Login /> : <Register />}
+        <p className={classNames(Style.tip, Style.loginTip)} onClick={handleSwitchToLogin}>
+          用户登录
+        </p>
+        <p className={classNames(Style.tip, Style.loginTip)}>|</p>
+        <p className={classNames(Style.tip, Style.loginTip)} onClick={handleSwitchToRegister}>
+          旅行社注册
+        </p>
       </div>
       <footer className={Style.copyright}>Copyright @ 2021-2022 Tencent. All Rights Reserved</footer>
     </div>

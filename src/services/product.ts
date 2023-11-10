@@ -19,7 +19,7 @@ interface IParams {
 }
 
 export const getProductList = async (params: IParams) => {
-  const result = await request.get<IResult>('api/get-card-list');
+  const result = await request.get<IResult>('/get-card-list');
 
   // 模拟接口分页
   let list = result?.data?.list || [];

@@ -27,7 +27,7 @@ export default function Header() {
       <header className={Style.loginHeader}>
         <LogoFullIcon className={Style.logo} />
         <div className={Style.operationsContainer}>
-          <Button
+          {/* <Button
             className={Style.operationsButton}
             theme='default'
             shape='square'
@@ -35,8 +35,8 @@ export default function Header() {
             onClick={navToGitHub}
           >
             <LogoGithubIcon className={Style.icon} />
-          </Button>
-          <Button
+          </Button> */}
+          {/* <Button
             className={Style.operationsButton}
             theme='default'
             shape='square'
@@ -44,7 +44,7 @@ export default function Header() {
             onClick={navToHelper}
           >
             <HelpCircleIcon className={Style.icon} />
-          </Button>
+          </Button> */}
           <Button
             className={Style.operationsButton}
             theme='default'

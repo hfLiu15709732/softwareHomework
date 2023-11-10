@@ -8,6 +8,7 @@ const dashboard: IRouter[] = [
     meta: {
       title: '统计报表',
       Icon: DashboardIcon,
+      hidden: true,
     },
     children: [
       {
@@ -15,6 +16,7 @@ const dashboard: IRouter[] = [
         Component: lazy(() => import('pages/Dashboard/Base')),
         meta: {
           title: '概览仪表盘',
+          hidden: true,
         },
       },
       {
@@ -22,6 +24,7 @@ const dashboard: IRouter[] = [
         Component: lazy(() => import('pages/Dashboard/Detail')),
         meta: {
           title: '统计报表',
+          hidden: true,
         },
       },
     ],

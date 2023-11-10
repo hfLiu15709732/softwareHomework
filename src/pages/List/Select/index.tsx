@@ -60,14 +60,14 @@ export const SelectTable = () => {
         data={contractList}
         columns={[
           {
-            title: '合同名称',
+            title: '航班号',
             fixed: 'left',
             align: 'left',
             ellipsis: true,
             colKey: 'name',
           },
           {
-            title: '合同状态',
+            title: '出发地',
             colKey: 'status',
             width: 200,
             cell({ row }) {
@@ -75,13 +75,13 @@ export const SelectTable = () => {
             },
           },
           {
-            title: '合同编号',
+            title: '目的地',
             width: 200,
             ellipsis: true,
             colKey: 'no',
           },
           {
-            title: '合同类型',
+            title: '起飞时间',
             width: 200,
             ellipsis: true,
             colKey: 'contractType',
@@ -90,7 +90,7 @@ export const SelectTable = () => {
             },
           },
           {
-            title: '合同收付类型',
+            title: '降落时间',
             width: 200,
             ellipsis: true,
             colKey: 'paymentType',
@@ -99,17 +99,10 @@ export const SelectTable = () => {
             },
           },
           {
-            title: '合同金额 (元)',
+            title: '操作',
             width: 200,
             ellipsis: true,
-            colKey: 'amount',
-          },
-          {
-            align: 'left',
-            fixed: 'right',
-            width: 200,
-            colKey: 'op',
-            title: '操作',
+            colKey: 'control',
             cell(record) {
               return (
                 <>
@@ -120,13 +113,22 @@ export const SelectTable = () => {
                       rehandleClickOp(record);
                     }}
                   >
-                    管理
+                    详情
                   </Button>
                   <Button
-                    theme='primary'
+                    theme='warning'
                     variant='text'
                     onClick={() => {
-                      handleClickDelete(record);
+                      rehandleClickOp(record);
+                    }}
+                  >
+                    修改
+                  </Button>
+                  <Button
+                    theme='danger'
+                    variant='text'
+                    onClick={() => {
+                      rehandleClickOp(record);
                     }}
                   >
                     删除

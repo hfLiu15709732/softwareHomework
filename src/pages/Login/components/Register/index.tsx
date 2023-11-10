@@ -74,7 +74,23 @@ export default function Register() {
             }
           />
         </FormItem>
-        {registerType === 'phone' && (
+        <FormItem name='password' rules={[{ required: true, message: '密码必填', type: 'error' }]}>
+          <Input
+            size='large'
+            type={showPsw ? 'text' : 'password'}
+            clearable
+            placeholder='密码确认'
+            prefixIcon={<LockOnIcon />}
+            suffixIcon={
+              showPsw ? (
+                <BrowseIcon onClick={() => toggleShowPsw((current) => !current)} />
+              ) : (
+                <BrowseOffIcon onClick={() => toggleShowPsw((current) => !current)} />
+              )
+            }
+          />
+        </FormItem>
+        {/* {registerType === 'phone' && (
           <FormItem name='verifyCode' rules={[{ required: true, message: '验证码必填', type: 'error' }]}>
             <Input size='large' placeholder='请输入验证码' />
             <Button
@@ -86,21 +102,21 @@ export default function Register() {
               {countdown === 0 ? '发送验证码' : `${countdown}秒后可重发`}
             </Button>
           </FormItem>
-        )}
+        )} */}
         <FormItem className={Style.checkContainer} name='checked' initialData={false}>
-          <Checkbox>我已阅读并同意 </Checkbox> <span className='tip'>TDesign服务协议</span> 和
-          <span className='tip'>TDesign 隐私声明</span>
+          <Checkbox>我已阅读并同意 </Checkbox> <span className='tip'>易启航服务协议</span> 和
+          <span className='tip'>易启航隐私声明</span>
         </FormItem>
         <FormItem>
           <Button block size='large' type='submit'>
             注册
           </Button>
         </FormItem>
-        <div className={Style.switchContainer}>
+        {/* <div className={Style.switchContainer}>
           <span className={Style.switchTip} onClick={() => switchType(registerType === 'phone' ? 'email' : 'phone')}>
             {registerType === 'phone' ? '使用邮箱注册' : '使用手机号注册'}
           </span>
-        </div>
+        </div> */}
       </Form>
     </div>
   );

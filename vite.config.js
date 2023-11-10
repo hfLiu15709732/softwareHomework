@@ -60,8 +60,9 @@ export default (params) => {
         '/api': {
           // 用于开发环境下的转发请求
           // 更多请参考：https://vitejs.dev/config/#server-proxy
-          target: 'https://service-exndqyuk-1257786608.gz.apigw.tencentcs.com',
+          target: ' https://mock.presstime.cn/mock/654bb196484bd4c55e4c9116/user',
           changeOrigin: true,
+          rewrite: (path) => path.replace('/api/', '/'),
         },
       },
     },

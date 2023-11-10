@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { Row, Col, Button, List, Card } from 'tdesign-react';
 import { IconFont } from 'tdesign-icons-react';
 import { BrowserRouterProps } from 'react-router-dom';
@@ -12,6 +12,7 @@ import ProductD from 'assets/svg/assets-product-4.svg?component';
 import useDynamicChart from 'hooks/useDynamicChart';
 
 import styles from './index.module.less';
+import { getContractList2 } from 'services/contract';
 
 const { ListItem, ListItemMeta } = List;
 
@@ -19,14 +20,30 @@ const User: React.FC<BrowserRouterProps> = () => {
   const chartData = useDynamicChart(visitData, {
     placeholderColor: ['legend.textStyle.color', 'xAxis.axisLabel.color', 'yAxis.axisLabel.color'],
   });
+
+  // const handleGetData = async () => {
+  //   try {
+  //     const airList = await getContractList2();
+  //     console.log(airList);
+  //   } catch (error) {
+  //     console.log(error, '出错啦');
+  //   }
+  // };
+
+  useEffect(() => {
+    // handleGetData();
+  }, []);
   return (
-    <div>
-      <Row gutter={[16, 16]}>
-        <Col xs={12} lg={12} xl={9}>
+    <div style={{ overflow: 'hidden !important' }}>
+      <Row
+        gutter={[16, 16]}
+        style={{ padding: '10px,20px', overflowX: 'hidden', maxWidth: '100vw', overflow: 'hidden !important' }}
+      >
+        <Col xs={12} lg={12} xl={12}>
           <Card className={styles.welcome} bordered={false}>
             <Row justify='space-between'>
               <Col className={styles.name}>
-                Hi，Image <span className={styles.regular}>下午好，今天是你加入鹅厂的第 100 天～</span>
+                Hi，张伟&nbsp;&nbsp;<span className={styles.regular}>下午好，今天是你加入鹅厂的第 100 天～</span>
               </Col>
               <Col>
                 <img alt='' src='https://tdesign.gtimg.com/starter/assets-tencent-logo.png' className={styles.logo} />
@@ -72,73 +89,18 @@ const User: React.FC<BrowserRouterProps> = () => {
                 <div className={styles.value}>Michael Wang</div>
               </Col>
               <Col span={3}>
-                <div className={styles.label}>职称</div>
-                <div className={styles.value}>高级 UI 设计师</div>
+                <div className={styles.label}></div>
+                <div className={styles.label}></div>
+                <div className={styles.value}>
+                  <Button>修改密码</Button>
+                </div>
               </Col>
               <Col span={3}>
-                <div className={styles.label}>入职时间</div>
-                <div className={styles.value}>2021-07-01</div>
-              </Col>
-            </Row>
-            <Row>
-              <Col span={12}>
-                <div className={styles.label}>所属团队</div>
-                <div className={styles.value}>腾讯/腾讯公司/某事业群/某产品部/某运营中心/商户服务组</div>
-              </Col>
-            </Row>
-          </Card>
-          <Card className={styles.statistics} title='主页访问数据' subtitle='（次）' bordered={false}>
-            <ReactEcharts option={chartData} notMerge={true} lazyUpdate={true} style={{ height: 360, marginTop: 16 }} />
-          </Card>
-        </Col>
-        <Col xs={12} lg={12} xl={3}>
-          <Card className={styles.postmsg}>
-            <div className={styles.avatar}>
-              <span>T</span>
-            </div>
-            <div className={styles.name}>My Account</div>
-            <div className={styles.position}>XXG 港澳业务拓展组员工 直客销售</div>
-          </Card>
-          <Card
-            className={styles.teams}
-            bordered={false}
-            title='团队成员'
-            actions={
-              <Button shape='square' theme='default' variant='text'>
-                <IconFont name='edit' />
-              </Button>
-            }
-          >
-            <List split={false}>
-              {TEAMS.map((item) => (
-                <ListItem key={item.id}>
-                  <ListItemMeta title={item.name} description={item.position} image={item.avatar} />
-                </ListItem>
-              ))}
-            </List>
-          </Card>
-          <Card
-            title='服务产品'
-            className={styles.product}
-            bordered={false}
-            actions={
-              <Button shape='square' theme='default' variant='text'>
-                <IconFont name='edit' />
-              </Button>
-            }
-          >
-            <Row gutter={32}>
-              <Col span={3}>
-                <ProductA />
-              </Col>
-              <Col span={3}>
-                <ProductB />
-              </Col>
-              <Col span={3}>
-                <ProductC />
-              </Col>
-              <Col span={3}>
-                <ProductD />
+                <div className={styles.label}></div>
+                <div className={styles.label}></div>
+                <div className={styles.value}>
+                  <Button theme='danger'>退出登录</Button>
+                </div>
               </Col>
             </Row>
           </Card>

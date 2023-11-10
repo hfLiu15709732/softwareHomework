@@ -30,7 +30,7 @@ export default function Login() {
 
         MessagePlugin.success('登录成功');
 
-        navigate('/dashboard/base');
+        navigate('/user/index');
       } catch (e) {
         console.log(e);
         MessagePlugin.error('登录失败');
@@ -117,7 +117,7 @@ export default function Login() {
             </Button>
           </FormItem>
         )}
-        <div className={Style.switchContainer}>
+        {/* <div className={Style.switchContainer}>
           {loginType !== 'password' && (
             <span className='tip' onClick={() => switchType('password')}>
               使用账号密码登录
@@ -133,7 +133,7 @@ export default function Login() {
               使用手机号登录
             </span>
           )}
-        </div>
+        </div> */}
       </Form>
     </div>
   );

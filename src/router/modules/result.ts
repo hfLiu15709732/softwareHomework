@@ -8,6 +8,7 @@ const result: IRouter[] = [
     meta: {
       title: '结果页',
       Icon: CheckCircleIcon,
+      hidden: true,
     },
     children: [
       {
@@ -15,6 +16,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/Success')),
         meta: {
           title: '成功页',
+          hidden: true,
         },
       },
       {
@@ -22,6 +24,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/Fail')),
         meta: {
           title: '失败页',
+          hidden: true,
         },
       },
       {
@@ -29,6 +32,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/NetworkError')),
         meta: {
           title: '网络异常',
+          hidden: true,
         },
       },
       {
@@ -36,6 +40,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/403')),
         meta: {
           title: '无权限',
+          hidden: true,
         },
       },
       {
@@ -43,6 +48,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/404')),
         meta: {
           title: '访问页面不存在页',
+          hidden: true,
         },
       },
       {
@@ -50,6 +56,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/500')),
         meta: {
           title: '服务器出错页',
+          hidden: true,
         },
       },
       {
@@ -57,6 +64,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/BrowserIncompatible')),
         meta: {
           title: '浏览器不兼容页',
+          hidden: true,
         },
       },
       {
@@ -64,6 +72,7 @@ const result: IRouter[] = [
         Component: lazy(() => import('pages/Result/Maintenance')),
         meta: {
           title: '系统维护页',
+          hidden: true,
         },
       },
     ],

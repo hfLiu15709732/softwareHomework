@@ -1,13 +1,13 @@
 import { lazy } from 'react';
-import { UserCircleIcon } from 'tdesign-icons-react';
+import { UserSettingIcon } from 'tdesign-icons-react';
 import { IRouter } from '../index';
 
 const result: IRouter[] = [
   {
     path: '/user',
     meta: {
-      title: '个人页',
-      Icon: UserCircleIcon,
+      title: '个人信息管理',
+      Icon: UserSettingIcon,
     },
     children: [
       {

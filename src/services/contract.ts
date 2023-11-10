@@ -22,7 +22,7 @@ interface IParams {
 }
 
 export const getContractList = async (params: IParams) => {
-  const result = await request.get<IResult>('/api/get-list');
+  const result = await request.get<IResult>('/get-list');
 
   // 模拟接口分页
   let list = result?.data?.list || [];
@@ -32,4 +32,9 @@ export const getContractList = async (params: IParams) => {
     list,
     total,
   };
+};
+
+export const getContractList2 = async () => {
+  const result = await request.get('/airline');
+  return result;
 };

@@ -74,24 +74,24 @@ export default memo(() => {
 
   return (
     <div>
-      <div className={Style.settingTitle}>主题模式</div>
+      <div className={Style.settingTitle}>网站主题模式</div>
       <RadioRect
         defaultValue={globalState.systemTheme ? ESettingTheme.system : globalState.theme}
         onChange={handleThemeSwitch}
         options={themeList}
       />
 
-      <div className={Style.settingTitle}>主题色</div>
+      <div className={Style.settingTitle}>网站主题色</div>
       <RadioColor defaultValue={globalState.color} onChange={(value) => dispatch(switchColor(value))} />
 
-      <div className={Style.settingTitle}>导航布局</div>
+      {/* <div className={Style.settingTitle}>导航布局</div>
       <RadioRect
         defaultValue={globalState.layout}
         onChange={(value) => dispatch(switchLayout(value))}
         options={layoutList}
-      />
+      /> */}
 
-      <div className={Style.settingTitle}>元素开关</div>
+      {/* <div className={Style.settingTitle}>元素开关</div>
       <Row justify='space-between'>
         <Col>
           <div className={Style.settingSubTitle}>显示 Header</div>
@@ -117,7 +117,7 @@ export default memo(() => {
         <Col>
           <Switch size='large' value={globalState.showFooter} onChange={() => dispatch(toggleShowFooter())} />
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 });

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Popup, Badge, Dropdown, Space } from 'tdesign-react';
+import { Button, Popup, Badge, Dropdown, Space, Avatar, Switch } from 'tdesign-react';
 import {
   Icon,
   LogoGithubIcon,
@@ -9,6 +9,9 @@ import {
   SettingIcon,
   PoweroffIcon,
   UserCircleIcon,
+  SunnyIcon,
+  MoonIcon,
+  Fullscreen2Icon,
 } from 'tdesign-icons-react';
 import { useAppDispatch } from 'modules/store';
 import { toggleSetting } from 'modules/global';
@@ -41,10 +44,10 @@ export default memo(() => {
 
   return (
     <Space align='center'>
-      <Badge className={Style.badge} count={6} dot={false} maxCount={99} shape='circle' showZero={false} size='medium'>
+      {/* <Badge className={Style.badge} count={6} dot={false} maxCount={99} shape='circle' showZero={false} size='medium'>
         <Button className={Style.menuIcon} shape='square' size='large' variant='text' icon={<MailIcon />} />
-      </Badge>
-      <Popup content='代码仓库' placement='bottom' showArrow destroyOnClose>
+      </Badge> */}
+      {/* <Popup content='代码仓库' placement='bottom' showArrow destroyOnClose>
         <Button
           className={Style.menuIcon}
           shape='square'
@@ -63,11 +66,13 @@ export default memo(() => {
           onClick={gotoWiki}
           icon={<HelpCircleIcon />}
         />
-      </Popup>
+      </Popup> */}
       <Dropdown trigger={'click'} onClick={clickHandler}>
         <Button variant='text' className={Style.dropdown}>
-          <Icon name='user-circle' className={Style.icon} />
-          <span className={Style.text}>Tencent</span>
+          {/* <Icon name='user-circle' className={Style.icon} /> */}
+          <Avatar image='https://tdesign.gtimg.com/starter/avatar-user-b.png' shape='circle' className={Style.icon} />
+
+          <span className={Style.text}>张伟</span>
           <Icon name='chevron-down' className={Style.icon} />
         </Button>
         <DropdownMenu>
@@ -85,6 +90,16 @@ export default memo(() => {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
+      <Popup content='全屏展示' placement='bottom' showArrow destroyOnClose>
+        <Button
+          className={Style.menuIcon}
+          shape='square'
+          size='large'
+          variant='text'
+          onClick={() => dispatch(toggleSetting())}
+          icon={<Fullscreen2Icon />}
+        />
+      </Popup>
       <Popup content='页面设置' placement='bottom' showArrow destroyOnClose>
         <Button
           className={Style.menuIcon}
